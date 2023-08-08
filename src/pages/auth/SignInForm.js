@@ -14,8 +14,28 @@ import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
-function SignInForm() {
-//   Add your component logic here
+    function SignInForm() {
+        const [signInData, setSignInData] = useState({
+          username: "",
+          password: "",
+        });
+        const { username, password } = signInData;
+      
+        const history = useHistory();
+        const handleSubmit = async (event) => {
+          event.preventDefault();
+          try {
+            await axios.post("/dj-rest-auth/login/", signInData);
+            history.push("/");
+          } catch (err) {
+          }
+        };
+        const handleChange = (event) => {
+          setSignInData({
+            ...signInData,
+            [event.target.name]: event.target.value,
+          });
+        };
 
   return (
     <Row className={styles.Row}>
