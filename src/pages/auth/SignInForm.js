@@ -42,7 +42,7 @@ import appStyles from "../../App.module.css";
       <Col className="my-auto p-0 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>Sign In</h1>
-          <Form>
+          <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="username">
                     <Form.Label className="d-none">Username</Form.Label>
                     <Form.Control 
@@ -50,6 +50,8 @@ import appStyles from "../../App.module.css";
                         placeholder="Username"
                         name="username" 
                         className={styles.Input}
+                        value={username}
+                        onChange={handleChange}
                     />
                 </Form.Group>
 
@@ -60,6 +62,8 @@ import appStyles from "../../App.module.css";
                         placeholder="Password" 
                         name="password"
                         className={styles.Input}
+                        value={password}
+                        onChange={handleChange}
                     />
                 </Form.Group>
                 <Button 
@@ -69,7 +73,6 @@ import appStyles from "../../App.module.css";
                     Sign In
                 </Button>
             </Form>
-
         </Container>
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signup">
