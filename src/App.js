@@ -5,6 +5,10 @@ import {Route, Switch} from 'react-router-dom'
 import './api/axiosDefaults'
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
+import React, { createContext, useState, useEffect } from 'react';
+import axios from 'axios';
+
+
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
