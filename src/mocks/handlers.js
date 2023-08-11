@@ -1,4 +1,5 @@
 import { rest } from "msw";
+import avatarImage from "../assets/default_profile_nqohxy.jpg"
 
 const baseURL = "https://drf-api-app-65d9b6a619df.herokuapp.com/";
 
