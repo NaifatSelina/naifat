@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 import appStyles from "../../App.module.css";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import Post from "./Post";
 
 function PostPage() {
     const { id } = useParams();
@@ -31,11 +32,9 @@ function PostPage() {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>Popular Reviwers for Mobile</p>
-        <p>Post Component</p>
-        <Container className={appStyles.Content}>
-          Comments
-        </Container>
+        <p>Popular Reviewers for Mobile</p>
+        <Post {...post.results[0]} setPosts={setPost} postPage />
+        <Container className={appStyles.Content}>Comments</Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
         Popular Reviewers for Desktop
