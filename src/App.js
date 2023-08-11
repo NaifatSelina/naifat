@@ -8,6 +8,7 @@ import SignInForm from "./pages/auth/SignInForm";
 import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import PostCreateForm from "./pages/posts/PostCreateForm";
+import PostPage from "./pages/posts/PostPage";
 
 
 
@@ -41,6 +42,7 @@ function App() {
           <Route exact path="/signin" render={() =><SignInForm />} />
           <Route exact path="/signup" render={() =><SignUpForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+          <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
