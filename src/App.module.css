@@ -1,5 +1,5 @@
 .App {
-  font-family: "DM Sans", sans-serif;
+  font-family: "Karla", sans-serif;
   background-color: #e2e2e2;
   min-height: 100vh;
 }
@@ -20,8 +20,6 @@
   object-fit: cover;
   height: 200%;
   width: 110%;
-  margin-bottom: 20%;
-  margin-left: 15%;
 }
 
 .Image {
