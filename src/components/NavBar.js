@@ -51,7 +51,7 @@ const NavBar = () => {
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
-        to="/liked"
+        to="/likes"
       >
         <i className="fas fa-heart"></i>Likes
       </NavLink>
@@ -91,7 +91,7 @@ const NavBar = () => {
       <Container>
         <NavLink to="/">
           <Navbar.Brand>
-            <img src={logo} alt="logo" height="45" />
+            <img src={logo} alt="logo" height="95" />
           </Navbar.Brand>
         </NavLink>
         {currentUser && addPostIcon}

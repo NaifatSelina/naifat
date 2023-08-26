@@ -33,7 +33,7 @@ function ProfilePage() {
   const currentUser = useCurrentUser();
   const { id } = useParams();
 
-  const { setProfileData, handleFollow } = useSetProfileData();
+  const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
   const { pageProfile } = useProfileData();
 
   const [profile] = pageProfile.results;
@@ -45,6 +45,7 @@ function ProfilePage() {
         const [{ data: pageProfile }, { data: profilePosts }] =
           await Promise.all([
           axiosReq.get(`/profiles/${id}/`),
+          axiosReq.get(`/posts/?owner__profile=${id}`),
         ]);
         setProfileData((prevState) => ({
           ...prevState,
@@ -93,7 +94,7 @@ function ProfilePage() {
             (profile?.following_id ? (
               <Button
                 className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
-                onClick={() => {}}
+                onClick={() => handleUnfollow(profile)}
               >
                 unfollow
               </Button>
@@ -114,7 +115,7 @@ function ProfilePage() {
   const mainProfilePosts = (
     <>
       <hr />
-      <p className="text-center">Profile owner's posts</p>
+      <p className="text-center">{profile?.owner}'s posts</p>
       <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll

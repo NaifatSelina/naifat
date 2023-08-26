@@ -10,3 +10,7 @@
   .Active i {
     color: #ffd6fa;
   }
+
+  .NavBar + * {
+    margin-top: 85px;
+  }
